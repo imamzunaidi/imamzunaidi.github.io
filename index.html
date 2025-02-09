@@ -28,7 +28,57 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+        /* Initial Style for Tooltip */
+    .tooltip {
+        display: none;
+        font-size: 14px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        position: absolute;
+        bottom: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
 
+    /* Styling for the icon container */
+    a {
+        position: relative;
+        margin: 10px;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    a:hover .tooltip {
+        display: block;
+        opacity: 1;
+    }
+
+    /* Optional: Styling for icons */
+    i {
+        font-size: 24px;
+        transition: transform 0.3s ease;
+    }
+
+    a:hover i {
+        transform: scale(1.2);
+    }
+
+    /* Add animation on click */
+    a:active i {
+        transform: scale(0.9);
+    }
+
+    .justify-text {
+
+        text-align: justify; /* Membuat teks menjadi rata tengah */
+    }
+  </style>
 </head>
 
 <body>
@@ -57,18 +107,26 @@
   <section id="hero" class="d-flex flex-column justify-content-center">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
       <h1>Muhamamd Imam Zunaidi</h1>
-      <p>I'm <span class="typed" data-typed-items="Full Stack Web Developer, Freelancer and Android Developer"></span>
+        <p>I'm <span class="typed" data-typed-items="Full Stack Developer and Freelancer"></span>
+          
       </p>
       <div class="social-links">
-        <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> -->
-        <a href="https://web.facebook.com/imam.zunaidi.39/" target="_BLANK" class="facebook"><i
-            class="bx bxl-facebook"></i></a>
-        <a href="https://instagram.com/imam_zunaidi?igshid=ZGUzMzM3NWJiOQ==" class="instagram" target="_BLANK"><i
-            class="bx bxl-instagram"></i></a>
-        <a href="https://wa.me/+6285326719122?text=Hallo Imam Saya Ada Keperluan Dengan Anda Tentang  " target="_BLANK"
-          class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
-        <a href="https://www.linkedin.com/in/muhammad-imam-zunaidi/" class="linkedin" target="_BLANK"><i
-            class="bx bxl-linkedin"></i></a>
+        <a href="https://web.facebook.com/imam.zunaidi.39/" target="_BLANK" class="facebook" onclick="showTooltip('facebook')">
+          <i class="bx bxl-facebook"></i> 
+          <span class="tooltip">Facebook</span>
+        </a>
+        <a href="https://instagram.com/imam_zunaidi?igshid=ZGUzMzM3NWJiOQ==" class="instagram" target="_BLANK" onclick="showTooltip('instagram')">
+            <i class="bx bxl-instagram"></i> 
+            <span class="tooltip">Instagram</span>
+        </a>
+        <a href="https://wa.me/+6285326719122?text=Hello Imam, I have something to do with you" target="_BLANK" class="whatsapp" onclick="showTooltip('whatsapp')">
+            <i class="bx bxl-whatsapp"></i> 
+            <span class="tooltip">WhatsApp</span>
+        </a>
+        <a href="https://www.linkedin.com/in/muhammad-imam-zunaidi/" class="linkedin" target="_BLANK" onclick="showTooltip('linkedin')">
+            <i class="bx bxl-linkedin"></i> 
+            <span class="tooltip">LinkedIn</span>
+        </a>
       </div>
     </div>
   </section><!-- End Hero -->
@@ -80,8 +138,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Tentang</h2>
-          <p>Saya adalah seorang Full Stack Developer yang berpengalaman dalam mengembangkan aplikasi web yang responsif dan efisien, dengan kemampuan yang kuat di berbagai teknologi front-end dan back-end. Selain itu, saya memiliki keterampilan public speaking yang telah saya kembangkan melalui pengalaman organisasi semasa sekolah dan kuliah, yang memungkinkan saya untuk berkomunikasi dengan efektif dan mempresentasikan ide-ide dengan percaya diri. Kombinasi keahlian teknis dan kemampuan komunikasi ini memungkinkan saya untuk bekerja secara kolaboratif dalam tim dan menyampaikan solusi yang inovatif kepada klien..</p>
+          <h2>About Me</h2>
+          <!-- <p>I am a Full Stack Developer experienced in developing responsive and efficient web applications, with strong skills in various front-end and back-end technologies. In addition, I have public speaking skills that I have developed through organizational experiences during school and college, which allow me to communicate effectively and present ideas with confidence. This combination of technical expertise and communication skills will enable me to collaborate in teams and deliver innovative solutions to clients.</p> -->
         </div>
 
         <div class="row">
@@ -89,9 +147,9 @@
             <img src="assets/img/imam_cover.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content">
-            <h3>Muhammad Imam Zunaidi</h3>
+            <!-- <h3>Muhammad Imam Zunaidi</h3>
             <p class="fst-italic">
-              Berikut merupakan biodata yang saya miliki :
+              The following is my biodata.
             </p>
             <div class="row">
               <div class="col-lg-6">
@@ -116,9 +174,17 @@
                 </ul>
               </div>
             </div>
-            <br>
+            <br>-->
+            <p class="justify-text"> 
+              I am a Full Stack Developer experienced in developing responsive and efficient web applications, with strong skills in various front-end and back-end technologies. In addition, I have public speaking skills that I have developed through organizational experiences during school and college, which allow me to communicate effectively and present ideas with confidence. This combination of technical expertise and communication skills will enable me to collaborate in teams and deliver innovative solutions to clients.
+              
+            </p>
+            <p class="justify-text">
+              In my free time, I actively participate in webinars on the latest technologies, which helps me stay updated with industry developments, especially in the technology field, and enhances my understanding of new tools. Involvement in these sessions not only broadens my horizons but also provides an opportunity to interact with other professionals in the technology field.
+            </p>
+
             <p>
-              Di waktu luang, saya aktif mengikuti webinar tentang teknologi terbaru, yang membantu saya tetap mengikuti dalam perkembangan industri terutama dibidang teknologi dan meningkatkan pemahaman saya tentang tools - tools baru. Keterlibatan dalam sesi-sesi ini tidak hanya memperluas wawasan saya, tetapi juga memberi kesempatan untuk berinteraksi dengan profesional lain dalam bidang teknologi.
+              I am also passionate about continuous learning and improving my skill set. I frequently engage in personal projects to experiment with new frameworks, libraries, and tools, which helps me refine my problem-solving abilities and stay ahead in the ever-evolving tech landscape. Whether it's building a project from scratch or optimizing existing solutions, I enjoy tackling challenges that push the boundaries of my knowledge and capabilities. This drive for growth, coupled with my hands-on experience, enables me to provide valuable insights and deliver high-quality, scalable solutions.
             </p>
           </div>
         </div>
@@ -127,7 +193,7 @@
     </section><!-- End About Section -->
 
     <!-- ======= Facts Section ======= -->
-    <section id="facts" class="facts">
+    <!-- <section id="facts" class="facts">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -166,26 +232,130 @@
             </div>
           </div>
 
-          <!-- <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-award"></i>
-              <span data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p>Awards</p>
-            </div>
-          </div> -->
-
         </div>
 
       </div>
-    </section><!-- End Facts Section -->
+    </section> -->
+    <!-- End Facts Section -->
+
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services">
+          <div class="container" data-aos="fade-up">
+    
+            <div class="section-title">
+              <h2>Service</h2>
+          
+            </div>
+    
+            <div class="row">
+    
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                <div class="icon-box iconbox-blue">
+                  <div class="icon">
+                    <!-- <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke="none" stroke-width="0" fill="#f5f5f5"
+                        d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174">
+                      </path>
+                    </svg> -->
+                    <img src="https://png.pngtree.com/png-clipart/20250102/original/pngtree-web-development-illustration-modern-png-image_4461019.png" alt="" width="100%">
+                    <!-- <i class="bx bxl-dribbble"></i> -->
+                  </div>
+                  <h4><a href="">Website Development</a></h4>
+                  <p>I develop websites with the Laravel and CodeIgniter frameworks and can also use React JS.</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
+                data-aos-delay="200">
+                <div class="icon-box iconbox-orange ">
+                  <div class="icon">
+                    <img src="https://png.pngtree.com/png-clipart/20240219/original/pngtree-app-development-concepts-style-illustrations-vector-png-image_14355025.png" alt="" width="100%">
+                    <!-- <i class="bx bx-file"></i> -->
+                  </div>
+                  <h4><a href="">Application Development</a></h4>
+                  <p>I build android based applications with react native and also using flutter</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
+                data-aos-delay="300">
+                <div class="icon-box iconbox-pink">
+                  <div class="icon">
+                    <!-- <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke="none" stroke-width="0" fill="#f5f5f5"
+                        d="M300,541.5067337569781C382.14930387511276,545.0595476570109,479.8736841581634,548.3450877840088,526.4010558755058,480.5488172755941C571.5218469581645,414.80211281144784,517.5187510058486,332.0715597781072,496.52539010469104,255.14436215662573C477.37192572678356,184.95920475031193,473.57363656557914,105.61284051026155,413.0603344069578,65.22779650032875C343.27470386102294,18.654635553484475,251.2091493199835,5.337323636656869,175.0934190732945,40.62881213300186C97.87086631185822,76.43348514350839,51.98124368387456,156.15599469081315,36.44837278890362,239.84606092416172C21.716077023791087,319.22268207091537,43.775223500013084,401.1760424656574,96.891909868211,461.97329694683043C147.22146801428983,519.5804099606455,223.5754009179313,538.201503339737,300,541.5067337569781">
+                      </path>
+                    </svg>
+                    <i class="bx bx-tachometer"></i> -->
+                    <img src="https://cdn-icons-png.freepik.com/256/17335/17335208.png?semt=ais_hybrid" alt="" width="100%">
+                  </div>
+                  <h4><a href="">API Development & Documentation</a></h4>
+                  <p>I created an API using the Laravel backend, CodeIgniter, PHP and can also use Express JS</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="icon-box iconbox-yellow">
+                  <div class="icon">
+                    <!-- <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke="none" stroke-width="0" fill="#f5f5f5"
+                        d="M300,503.46388370962813C374.79870501325706,506.71871716319447,464.8034551963731,527.1746412648533,510.4981551193396,467.86667711651364C555.9287308511215,408.9015244558933,512.6030010748507,327.5744911775523,490.211057578863,256.5855673507754C471.097692560561,195.9906835881958,447.69079081568157,138.11976852964426,395.19560036434837,102.3242989838813C329.3053358748298,57.3949838291264,248.02791733380457,8.279543830951368,175.87071277845988,42.242879143198664C103.41431057327972,76.34704239035025,93.79494320519305,170.9812938413882,81.28167332365135,250.07896920659033C70.17666984294237,320.27484674793965,64.84698225790005,396.69656628748305,111.28512138212992,450.4950937839243C156.20124167950087,502.5303643271138,231.32542653798444,500.4755392045468,300,503.46388370962813">
+                      </path>
+                    </svg> -->
+                    <!-- <i class="bx bx-layer"></i> -->
+                    <img src="https://cdn-icons-png.freepik.com/256/13163/13163387.png?semt=ais_hybrid" alt="" width="100%">
+                  </div>
+                  <h4><a href="">Company Profile</a></h4>
+                  <p>I can create a company profile according to the company's needs</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="icon-box iconbox-red">
+                  <div class="icon">
+                    <!-- <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke="none" stroke-width="0" fill="#f5f5f5"
+                        d="M300,532.3542879108572C369.38199826031484,532.3153073249985,429.10787420159085,491.63046689027357,474.5244479745417,439.17860296908856C522.8885846962883,383.3225815378663,569.1668002868075,314.3205725914397,550.7432151929288,242.7694973846089C532.6665558377875,172.5657663291529,456.2379748765914,142.6223662098291,390.3689995646985,112.34683881706744C326.66090330228417,83.06452184765237,258.84405631176094,53.51806209861945,193.32584062364296,78.48882559362697C121.61183558270385,105.82097193414197,62.805066853699245,167.19869350419734,48.57481801355237,242.6138429142374C34.843463184063346,315.3850353017275,76.69343916112496,383.4422959591041,125.22947124332185,439.3748458443577C170.7312796277747,491.8107796887764,230.57421082200815,532.3932930995766,300,532.3542879108572">
+                      </path>
+                    </svg>
+                    <i class="bx bx-slideshow"></i> -->
+                    
+                    <img src="https://www.zahironline.com/wp-content/uploads/2017/03/icon-analisa-bisnis-1.png" alt="" width="100%">
+                  </div>
+                  <h4><a href="">Application Internal Company</a></h4>
+                  <p>I have more than 3 years of experience creating internal company applications using Laravel</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+                <div class="icon-box iconbox-teal">
+                  <div class="icon">
+                    <!-- <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke="none" stroke-width="0" fill="#f5f5f5"
+                        d="M300,566.797414625762C385.7384707136149,576.1784315230908,478.7894351017131,552.8928747891023,531.9192734346935,484.94944893311C584.6109503024035,417.5663521118492,582.489472248146,322.67544863468447,553.9536738515405,242.03673114598146C529.1557734026468,171.96086150256528,465.24506316201064,127.66468636344209,395.9583748389544,100.7403814666027C334.2173773831606,76.7482773500951,269.4350130405921,84.62216499799875,207.1952322260088,107.2889140133804C132.92018162631612,134.33871894543012,41.79353780512637,160.00259165414826,22.644507872594943,236.69541883565114C3.319112789854554,314.0945973066697,72.72355303640163,379.243833228382,124.04198916343866,440.3218312028393C172.9286146004772,498.5055451809895,224.45579914871206,558.5317968840102,300,566.797414625762">
+                      </path>
+                    </svg>
+                    <i class="bx bx-arch"></i> -->
+                    <img src="https://png.pngtree.com/png-vector/20220724/ourmid/pngtree-database-structure-icon-architecture-structure-vector-vector-png-image_38118176.jpg" alt="" width="100%">
+                  </div>
+                  <h4><a href="">Database Architecture</a></h4>
+                  <p>I am experienced in designing databases, namely MySQL, SQL Server and also Postgree SQL.</p>
+                </div>
+              </div>
+    
+            </div>
+    
+          </div>
+        </section>
+        
+        <!-- End Services Section -->
 
     <!-- ======= Skills Section ======= -->
     <section id="skills" class="skills section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Keahlian</h2>
+          <h2>SKILL</h2>
           <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
             consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
             in iste officiis commodi quidem hic quas.</p> -->
@@ -259,76 +429,89 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Ringkasan</h2>
-          <p>Berikut merupakan ringkasan mulai dari pendidikan, organisasi, pengalaman kerja dan berbagai project yang
-            telah saya lakukan.</p>
+          <h2>My Experiences</h2>
+          <p>I've had the pleasure to work with companies across a variety of industries. I'm always interested in new and exciting adventures</p>
         </div>
 
         <div class="row">
+          
           <div class="col-lg-6">
-            <h3 class="resume-title">Pendidikan</h3>
+            <h3 class="resume-title">Work experience</h3>
             <div class="resume-item">
-              <h4>MA Madarijul Huda</h4>
-              <h5>2015 - 2017</h5>
-              <p><em>Jurusan Ilmu Pengetahuan Sosial</em></p>
-              <p>sewaktu saya sekolah saya mengikuti organisasi OSIS dan menjabat sebagai ketua OSIS</p>
-            </div>
-            <div class="resume-item">
-              <h4>Teknik Informatika</h4>
-              <h5>2017 - 2021</h5>
-              <p><em>Teknik Informatika</em></p>
-              <p>Pada waktu kuliah saya mengikuti Organisasi Himpunan Mahasiswa Jurusan dan juga sebagai asisten dosen
-              </p>
-            </div>
-            <h3 class="resume-title">Pengalaman</h3>
-            <div class="resume-item pb-0">
-              <h4>Asisten Dosen</h4>
-              <h5>2019-2020</h5>
-              <p><em>Sebagai asisten dosen pada matakuliah aplikasi teknologi informasi</em></p>
-            </div>
-            <div class="resume-item pb-0">
-              <h4>Himpunan Mahasiswa Teknik Informatika</h4>
-              <h5> 2018 – 2019</h5>
-              <p><em>Sebagai Kordinator Divisi Sumber Daya Manusia (SDM) dan menjadi Anggota Badan Pengurus Harian</em>
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <h3 class="resume-title">Pengalaman Kerja</h3>
-            <div class="resume-item">
-              <h4>Full Stack Web Developer</h4>
-              <h5>2021 - Sekarang</h5>
-              <p><em> PT United Tractor Pandu Enggenering </em></p>
+              <h4>Full Stack Developer</h4>
+              <h5>2024 - Sekarang</h5>
+              <p><em>PT Hwaseung Indonesia </em></p>
               <ul>
-                <li>Membangun sebuah sistem Aplikasi E-Recruitment Perusahaan </li>
-                <li>Membangun sebuah sistem monitoring kesehatan karyawan (E-Health) dalam perusahaan </li>
-                <li>Membangun Sistem Elogbook, sistem pencatatan kinerja operator pada Perusahaan</li>
-                <li>Membangun Sistem Key Peformance Indicator (KPI Tracking) untuk memonitoring performance karyawan
-                  seluruh karyawan yang di dalamnya di lengkapi berbagai Modul diantaranya Astra Management System
-                  (AMS), Individual Peformance Plan, Individual Development Planning, Innovation Tracking dan Project
+                <li>Development a Company Project Kanban System</li>
+                <li>Development Application documentation problem and solution case in company</li>
+                <li>Development Application Management IT System, Application used to record all IT department data, such as IP data, file sharing and so on</li>
+                <li>Development Application Nosew Temperature, application used to monitor cutting machines
+       
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Full Stack Developer</h4>
+              <h5>2021 - 2024</h5>
+              <p><em>PT United Tractor Pandu Enggenering </em></p>
+              <ul>
+                <li>Development a E-Recruitment Application System Company</li>
+                <li>Development an employee health monitoring system (E-Health) in the company </li>
+                <li>Development an Elogbook System, a system for recording operator performance in the Company</li>
+                <li>Developmetn Application Key Performance Indicator (KPI Tracking), System to monitor employee performance
+                  all employees are equipped with various modules including Astra Management System
+                  (AMS), Individual Performance Plan, Individual Development Planning, Innovation Tracking and Project
                   Management
                 </li>
-                <li>Mentor Mahasiswa Magang pada perusahaan untuk membangun sebuah sistem</li>
+                <li>Mentor Internship Students at companies to build a system</li>
               </ul>
             </div>
             <div class="resume-item">
               <h4>Freelance</h4>
               <h5>2019 - 2021</h5>
               <ul>
-                <li>Membangun Sistem Web Company Kalimasodo Pati Jawa Tengah.</li>
-                <li>Membuat Sistem Web Company Profile Mitra CendekiaInstitute</li>
-                <li>Membangun Sistem Inveontory PT Andam Nusantara Jakarta</li>
-                <li>Membangun Aplikasi PPID Dinas Kelautan dan Perikanan Provinsi Jawa Tengah</li>
+                <li>Development a Web Company System in CV Kalimasodo Pati, Central Java.</li>
+                <li>Development Company Profile Mitra CendekiaInstitute</li>
+                <li>Development System Inventory PT Andam Nusantara Jakarta</li>
+                <li>Development System PPID Central Java Province Marine and Fisheries Service</li>
               </ul>
             </div>
             <div class="resume-item">
-              <h4>Magang</h4>
+              <h4>Apprenticeship</h4>
               <h5>2019 - 2021</h5>
               <p><em> PT Global Intermedia Nusantara Yogyakarta </em></p>
               <ul>
-                <li>Membangun Sistem Aplikasi Penyuluh E-MATRIKS Sistem Informasi Capaian Kinerja Penyuluh Perikanan
-                  Satminkal Balai Pelatihan dan Penyuluhan Perikanan Tegal (BPPP Tegal) </li>
+                <li>Building an E-MATRIX Extension Worker Application System Information System for Achievement of Fisheries Extension Worker Performance
+                  Satminkal Tegal Fisheries Training and Extension Center (BPPP Tegal) </li>
               </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>MA Madarijul Huda</h4>
+              <h5>2015 - 2017</h5>
+              <p><em></em></p>
+              <p>When I was at school I joined the OSIS organization and served as OSIS chairman</p>
+            </div>
+            <div class="resume-item">
+              <h4>Universitas Teknologi Yogyakarta</h4>
+              <h5>2017 - 2021</h5>
+              <p><em>Information Technology</em></p>
+              <p>During college, I joined the Department's Student Association Organization and also worked as a teaching assistant.
+              </p>
+            </div>
+            <h3 class="resume-title">Organizational experience</h3>
+            <div class="resume-item pb-0">
+              <h4>Assistant professor</h4>
+              <h5>2019-2020</h5>
+              <p><em>As a teaching assistant in the information technology application course</em></p>
+            </div>
+            <div class="resume-item pb-0">
+              <h4>Students Association Information Technology</h4>
+              <h5> 2018 – 2019</h5>
+              <p><em>As the Coordinator of the Human Resources (HR) Division and a Member of the Daily Management Board</em>
+              </p>
             </div>
           </div>
         </div>
@@ -349,8 +532,8 @@
           <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-web">Web</li>
+              <li data-filter=".filter-app">Internal Company</li>
+              <li data-filter=".filter-web">Public</li>
             </ul>
           </div>
         </div>
@@ -373,7 +556,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/dashboard_eqm.png" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -405,7 +588,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/ehealth.png" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -421,7 +604,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/tracking-home.png" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -452,7 +635,51 @@
               </div>
             </div>
           </div>
-
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/ppid_login.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>PPID JAWA TENGAH</h4>
+                <p>PPID PELAKSANA Dinas Kelautan dan Perikanan Prov. Jateng</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/ppid.png" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="IT EXORESS"><i class="bx bx-plus"></i></a>
+                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/latihancoding.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Latihan Coding</h4>
+                <p>Application Couse Free for every one</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/latihancoding.png" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="IT EXORESS"><i class="bx bx-plus"></i></a>
+                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/codinginaja.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Codingan Aja</h4>
+                <p>Application service development Application</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/codinginaja_login.png" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="IT EXORESS"><i class="bx bx-plus"></i></a>
+                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
           
 
         </div>
@@ -460,115 +687,7 @@
       </div>
     </section><!-- End Portfolio Section -->
 
-    <!-- ======= Services Section ======= -->
-    <!-- <section id="services" class="services">
-      <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-          <h2>Layanan</h2>
-      
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box iconbox-blue">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5"
-                    d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174">
-                  </path>
-                </svg>
-                <i class="bx bxl-dribbble"></i>
-              </div>
-              <h4><a href="">Free Konsultasi</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
-            data-aos-delay="200">
-            <div class="icon-box iconbox-orange ">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5"
-                    d="M300,582.0697525312426C382.5290701553225,586.8405444964366,449.9789794690241,525.3245884688669,502.5850820975895,461.55621195738473C556.606425686781,396.0723002908107,615.8543463187945,314.28637112970534,586.6730223649479,234.56875336149918C558.9533121215079,158.8439757836574,454.9685369536778,164.00468322053177,381.49747125262974,130.76875717737553C312.15926192815925,99.40240125094834,248.97055460311594,18.661163978235184,179.8680185752513,50.54337015887873C110.5421016452524,82.52863877960104,119.82277516462835,180.83849132639028,109.12597500060166,256.43424936330496C100.08760227029461,320.3096726198365,92.17705696193138,384.0621239912766,124.79988738764834,439.7174275375508C164.83382741302287,508.01625554203684,220.96474134820875,577.5009287672846,300,582.0697525312426">
-                  </path>
-                </svg>
-                <i class="bx bx-file"></i>
-              </div>
-              <h4><a href="">Pengerjaan Sesuai Timeline</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
-            data-aos-delay="300">
-            <div class="icon-box iconbox-pink">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5"
-                    d="M300,541.5067337569781C382.14930387511276,545.0595476570109,479.8736841581634,548.3450877840088,526.4010558755058,480.5488172755941C571.5218469581645,414.80211281144784,517.5187510058486,332.0715597781072,496.52539010469104,255.14436215662573C477.37192572678356,184.95920475031193,473.57363656557914,105.61284051026155,413.0603344069578,65.22779650032875C343.27470386102294,18.654635553484475,251.2091493199835,5.337323636656869,175.0934190732945,40.62881213300186C97.87086631185822,76.43348514350839,51.98124368387456,156.15599469081315,36.44837278890362,239.84606092416172C21.716077023791087,319.22268207091537,43.775223500013084,401.1760424656574,96.891909868211,461.97329694683043C147.22146801428983,519.5804099606455,223.5754009179313,538.201503339737,300,541.5067337569781">
-                  </path>
-                </svg>
-                <i class="bx bx-tachometer"></i>
-              </div>
-              <h4><a href="">Free Revisi</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box iconbox-yellow">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5"
-                    d="M300,503.46388370962813C374.79870501325706,506.71871716319447,464.8034551963731,527.1746412648533,510.4981551193396,467.86667711651364C555.9287308511215,408.9015244558933,512.6030010748507,327.5744911775523,490.211057578863,256.5855673507754C471.097692560561,195.9906835881958,447.69079081568157,138.11976852964426,395.19560036434837,102.3242989838813C329.3053358748298,57.3949838291264,248.02791733380457,8.279543830951368,175.87071277845988,42.242879143198664C103.41431057327972,76.34704239035025,93.79494320519305,170.9812938413882,81.28167332365135,250.07896920659033C70.17666984294237,320.27484674793965,64.84698225790005,396.69656628748305,111.28512138212992,450.4950937839243C156.20124167950087,502.5303643271138,231.32542653798444,500.4755392045468,300,503.46388370962813">
-                  </path>
-                </svg>
-                <i class="bx bx-layer"></i>
-              </div>
-              <h4><a href="">Amanah</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box iconbox-red">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5"
-                    d="M300,532.3542879108572C369.38199826031484,532.3153073249985,429.10787420159085,491.63046689027357,474.5244479745417,439.17860296908856C522.8885846962883,383.3225815378663,569.1668002868075,314.3205725914397,550.7432151929288,242.7694973846089C532.6665558377875,172.5657663291529,456.2379748765914,142.6223662098291,390.3689995646985,112.34683881706744C326.66090330228417,83.06452184765237,258.84405631176094,53.51806209861945,193.32584062364296,78.48882559362697C121.61183558270385,105.82097193414197,62.805066853699245,167.19869350419734,48.57481801355237,242.6138429142374C34.843463184063346,315.3850353017275,76.69343916112496,383.4422959591041,125.22947124332185,439.3748458443577C170.7312796277747,491.8107796887764,230.57421082200815,532.3932930995766,300,532.3542879108572">
-                  </path>
-                </svg>
-                <i class="bx bx-slideshow"></i>
-              </div>
-              <h4><a href="">Dele Cardo</a></h4>
-              <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box iconbox-teal">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5"
-                    d="M300,566.797414625762C385.7384707136149,576.1784315230908,478.7894351017131,552.8928747891023,531.9192734346935,484.94944893311C584.6109503024035,417.5663521118492,582.489472248146,322.67544863468447,553.9536738515405,242.03673114598146C529.1557734026468,171.96086150256528,465.24506316201064,127.66468636344209,395.9583748389544,100.7403814666027C334.2173773831606,76.7482773500951,269.4350130405921,84.62216499799875,207.1952322260088,107.2889140133804C132.92018162631612,134.33871894543012,41.79353780512637,160.00259165414826,22.644507872594943,236.69541883565114C3.319112789854554,314.0945973066697,72.72355303640163,379.243833228382,124.04198916343866,440.3218312028393C172.9286146004772,498.5055451809895,224.45579914871206,558.5317968840102,300,566.797414625762">
-                  </path>
-                </svg>
-                <i class="bx bx-arch"></i>
-              </div>
-              <h4><a href="">Divera Don</a></h4>
-              <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-     -->
-    <!-- End Services Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <!-- <section id="testimonials" class="testimonials section-bg">
